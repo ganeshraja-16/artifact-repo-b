@@ -10,8 +10,8 @@ jobs:
         with:
           name: shared-payload
           path: incoming/
-          repository: yourname/repoA
-          run-id: 1234567890
+          repository: ganeshraja-16/artifact-repo-a
+          run-id: 28939628780
           github-token: ${{ secrets.REPO_A_PAT }}
 
       - name: Use the file
