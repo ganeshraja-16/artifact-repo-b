@@ -1,0 +1,20 @@
+name: Consume Artifact from Repo A
+on: [workflow_dispatch]
+
+jobs:
+  fetch-and-use:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact from Repo A
+        uses: actions/download-artifact@v5
+        with:
+          name: shared-payload
+          path: incoming/
+          repository: yourname/repoA
+          run-id: 1234567890
+          github-token: ${{ secrets.REPO_A_PAT }}
+
+      - name: Use the file
+        run: |
+          echo "Contents received from Repo A:"
+          cat incoming/data.txt
